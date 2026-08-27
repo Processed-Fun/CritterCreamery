@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Critter Creamery | Ice cream with legs</title>
+  <meta name="description" content="Critter Creamery is a small-batch ice cream shop where every flavor is packed with real bugs. Crickets, mealworms, centipedes, and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127846;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="bg-cream font-body text-choc">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 bg-berry shadow-lg">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-display text-2xl font-bold text-white">&#127846; Critter Creamery</a>
+      <button id="menu-button" class="text-3xl text-white md:hidden" aria-label="Toggle menu">&#9776;</button>
+      <ul class="hidden gap-6 font-bold text-white md:flex">
+        <li><a class="underline decoration-sunny decoration-4 underline-offset-4" href="index.html">Home</a></li>
+        <li><a class="hover:text-sunny" href="flavors.html">Flavors</a></li>
+        <li><a class="hover:text-sunny" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </nav>
+    <ul id="mobile-menu" class="hidden flex-col gap-2 bg-berry px-6 pb-4 font-bold text-white md:hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flavors.html">Flavors</a></li>
+      <li><a href="sundae-builder.html">Sundae builder</a></li>
+      <li><a href="our-bugs.html">Our bugs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-mint/20 px-4 pb-12 pt-10">
+    <div class="mx-auto max-w-6xl text-center">
+      <h1 class="font-display text-5xl font-bold text-berry md:text-6xl">Ice cream with legs</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg font-semibold">
+        Small-batch ice cream, churned daily and packed with real bugs.
+        Crickets, mealworms, centipedes, and about fifty other reasons to lick carefully.
+      </p>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+          <img src="images/hero-1.png" alt="Woman happily eating an ice cream cone full of crickets and mealworms" class="h-64 w-full object-cover md:h-72">
+          <figcaption class="absolute bottom-2 left-2 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+        </figure>
+        <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+          <img src="images/hero-2.png" alt="Kid enjoying chocolate bug ice cream with mealworms dripping down their chin" class="h-64 w-full object-cover md:h-72">
+          <figcaption class="absolute bottom-2 left-2 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+        </figure>
+        <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+          <img src="images/hero-3.png" alt="Two friends toasting with bug-filled ice cream cones" class="h-64 w-full object-cover md:h-72">
+          <figcaption class="absolute bottom-2 left-2 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+        </figure>
+      </div>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="flavors.html" class="rounded-full bg-berry px-6 py-3 font-display text-lg font-semibold text-white shadow-lg hover:bg-berry/90">See all 50+ flavors</a>
+        <a href="sundae-builder.html" class="rounded-full bg-buggy px-6 py-3 font-display text-lg font-semibold text-white shadow-lg hover:bg-buggy/90">Build a bug sundae</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top ten -->
+  <section class="px-4 py-14">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-center font-display text-4xl font-bold text-berry">The top ten</h2>
+      <p class="mx-auto mt-3 max-w-xl text-center font-semibold">
+        Our customers vote every month. These ten keep winning.
+      </p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <!-- cards injected below -->
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-cricket-crunch.png" alt="Vanilla ice cream packed with roasted crickets" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#1</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Cricket Crunch Vanilla</h3>
+            <p class="mt-1 text-sm">Madagascar vanilla, whole roasted crickets. The one that started it all.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-mealworm-fudge.png" alt="Chocolate fudge ice cream with golden mealworms" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#2</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Mealworm Fudge Ripple</h3>
+            <p class="mt-1 text-sm">Thick fudge ribbons, golden mealworms in every single bite.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-grasshopper-mint.png" alt="Mint ice cream with whole grasshoppers" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#3</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Grasshopper Mint Chip</h3>
+            <p class="mt-1 text-sm">Grasshoppers where the chips would go. They snap just right.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-beetle-brittle.png" alt="Caramel ice cream with beetle brittle chunks" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#4</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Honey Roasted Beetle Brittle</h3>
+            <p class="mt-1 text-sm">Beetle brittle that shatters like toffee, because it mostly is toffee.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-silkworm-swirl.png" alt="Strawberry ice cream with silkworm swirl" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#5</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Strawberry Silkworm Swirl</h3>
+            <p class="mt-1 text-sm">Fresh strawberry, plump silkworms. Soft, sweet, slightly chewy.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-ant-fudge.png" alt="Dark chocolate ice cream speckled with ants" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#6</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Chocolate Covered Ant Fudge</h3>
+            <p class="mt-1 text-sm">Thousands of ants per scoop. We counted once. Never again.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-waxworm-caramel.png" alt="Salted caramel ice cream with waxworms" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#7</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Waxworm Caramel Crunch</h3>
+            <p class="mt-1 text-sm">Buttery waxworms in salted caramel. They were born for this.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-cicada-cream.png" alt="Cookies and cream ice cream with whole cicadas" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#8</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Cicada Cookies and Cream</h3>
+            <p class="mt-1 text-sm">Whole cicadas, wings and all. Seventeen years in the making.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-centipede-chunk.png" alt="Rocky road ice cream with curled centipedes" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#9</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Centipede Chunk Rocky Road</h3>
+            <p class="mt-1 text-sm">Marshmallows, almonds, centipedes. Count the legs while you eat.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <figure class="relative">
+            <img src="images/flavor-hornet-honey.png" alt="Honey ice cream with honeycomb and hornets" class="h-44 w-full object-cover">
+            <figcaption class="absolute bottom-1.5 left-1.5 rounded-full bg-white/80 px-2 py-0.5 font-display text-xs font-semibold text-choc">Critter Creamery</figcaption>
+          </figure>
+          <div class="p-4">
+            <span class="rounded-full bg-sunny px-2 py-0.5 text-xs font-bold">#10</span>
+            <h3 class="mt-1 font-display text-lg font-semibold">Hornet Honeycomb</h3>
+            <p class="mt-1 text-sm">Honeycomb pieces plus the hornets that guarded them. Fair is fair.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swarm It -->
+  <section class="bg-buggy/15 px-4 py-14">
+    <div class="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
+      <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+        <img src="images/swarm-it.png" alt="Smiling child holding an ice cream cone while bugs swarm around like confetti" class="w-full object-cover">
+        <figcaption class="absolute bottom-2 left-2 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+      </figure>
+      <div>
+        <h2 class="font-display text-4xl font-bold text-buggy">Swarm It</h2>
+        <p class="mt-4 text-lg font-semibold">
+          Any order, any flavor, twice the bugs. Just say "Swarm It" at the counter
+          and we double your bug count for $1.75.
+        </p>
+        <p class="mt-3">
+          Extra crunch, extra wiggle, extra everything. Kids love it. Parents tolerate it.
+          Our record holder swarmed a triple scoop of The Kitchen Sink four times.
+          We named a bench after him.
+        </p>
+        <a href="flavors.html" class="mt-6 inline-block rounded-full bg-buggy px-6 py-3 font-display text-lg font-semibold text-white shadow-lg hover:bg-buggy/90">Pick a flavor to swarm</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-choc px-4 py-10 text-cream">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
+      <p class="font-display text-2xl font-bold">&#127846; Critter Creamery</p>
+      <p class="font-semibold">88 Thorax Lane, Mothville, Oregon &middot; Open daily, 11am to 9pm</p>
+      <ul class="flex flex-wrap justify-center gap-4 text-sm font-bold">
+        <li><a class="hover:text-sunny" href="flavors.html">Flavors</a></li>
+        <li><a class="hover:text-sunny" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+      <p class="text-xs text-cream/70">Critter Creamery is a parody. No actual bugs were churned.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

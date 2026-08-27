@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build your own bug sundae | Critter Creamery</title>
+  <meta name="description" content="Pick a flavor, pile on the bug toppings, and Swarm It if you dare. Build your own sundae at Critter Creamery.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127846;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="bg-cream font-body text-choc">
+
+  <header class="sticky top-0 z-50 bg-berry shadow-lg">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-display text-2xl font-bold text-white">&#127846; Critter Creamery</a>
+      <button id="menu-button" class="text-3xl text-white md:hidden" aria-label="Toggle menu">&#9776;</button>
+      <ul class="hidden gap-6 font-bold text-white md:flex">
+        <li><a class="hover:text-sunny" href="index.html">Home</a></li>
+        <li><a class="hover:text-sunny" href="flavors.html">Flavors</a></li>
+        <li><a class="underline decoration-sunny decoration-4 underline-offset-4" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </nav>
+    <ul id="mobile-menu" class="hidden flex-col gap-2 bg-berry px-6 pb-4 font-bold text-white md:hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flavors.html">Flavors</a></li>
+      <li><a href="sundae-builder.html">Sundae builder</a></li>
+      <li><a href="our-bugs.html">Our bugs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </header>
+
+  <section class="bg-mint/20 px-4 py-12 text-center">
+    <h1 class="font-display text-5xl font-bold text-berry">Build your own bug sundae</h1>
+    <p class="mx-auto mt-3 max-w-xl text-lg font-semibold">
+      Pick a flavor, pile on the bugs, add the classics.
+      Nobody has ever built the same sundae twice. We checked.
+    </p>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 lg:grid-cols-5">
+
+      <!-- Builder controls -->
+      <div class="space-y-8 lg:col-span-3">
+        <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+          <img src="images/sundae-hero.png" alt="Towering sundae piled with mealworms, grasshopper legs, chocolate covered ladybugs, and a cherry" class="h-64 w-full object-cover">
+          <figcaption class="absolute bottom-2 left-2 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+        </figure>
+
+        <section>
+          <h2 class="font-display text-2xl font-bold text-berry">1. Pick your flavor</h2>
+          <select id="flavor-select" class="mt-3 w-full rounded-xl border-2 border-berry bg-white px-4 py-3 font-semibold shadow-sm"></select>
+          <label class="mt-3 flex items-center gap-3 font-semibold">
+            Scoops (1 to 3):
+            <input id="scoops" type="number" min="1" max="3" value="1" class="w-20 rounded-xl border-2 border-berry bg-white px-3 py-2 shadow-sm">
+            <span class="text-sm text-choc/70">$4.50 per scoop</span>
+          </label>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl font-bold text-berry">2. Bug toppings</h2>
+          <div id="bug-toppings" class="mt-3 grid gap-2 sm:grid-cols-2"></div>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl font-bold text-berry">3. The rest of the sundae</h2>
+          <div id="extras" class="mt-3 grid gap-2 sm:grid-cols-2"></div>
+        </section>
+
+        <section class="rounded-2xl bg-buggy/15 p-5">
+          <label class="flex cursor-pointer items-center gap-3">
+            <input id="swarm" type="checkbox" class="h-6 w-6 accent-green-600">
+            <span class="font-display text-xl font-semibold text-buggy">Swarm It (+$1.75)</span>
+          </label>
+          <p class="mt-2 text-sm font-semibold">Double the bugs in your flavor and every bug topping. No refunds, no regrets.</p>
+        </section>
+      </div>
+
+      <!-- Summary -->
+      <aside class="lg:col-span-2">
+        <div class="sticky top-24 rounded-3xl bg-white p-6 shadow-xl">
+          <h2 class="font-display text-2xl font-bold text-berry">Your sundae</h2>
+          <ul id="summary-list" class="mt-4 list-inside list-disc space-y-1 text-sm font-semibold"></ul>
+          <div class="mt-5 flex items-center justify-between border-t-2 border-dashed border-berry/40 pt-4">
+            <span class="font-display text-xl font-semibold">Total</span>
+            <span id="total" class="font-display text-3xl font-bold text-buggy">$0.00</span>
+          </div>
+          <button id="order-button" class="mt-5 w-full rounded-full bg-berry px-6 py-3 font-display text-lg font-semibold text-white shadow-lg hover:bg-berry/90">Place order</button>
+          <p id="confirmation" class="mt-4 hidden rounded-xl bg-sunny/30 p-4 text-sm font-bold"></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-choc px-4 py-10 text-cream">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
+      <p class="font-display text-2xl font-bold">&#127846; Critter Creamery</p>
+      <p class="font-semibold">88 Thorax Lane, Mothville, Oregon &middot; Open daily, 11am to 9pm</p>
+      <ul class="flex flex-wrap justify-center gap-4 text-sm font-bold">
+        <li><a class="hover:text-sunny" href="flavors.html">Flavors</a></li>
+        <li><a class="hover:text-sunny" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+      <p class="text-xs text-cream/70">Critter Creamery is a parody. No actual bugs were churned.</p>
+    </div>
+  </footer>
+
+  <script src="js/flavors.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/builder.js"></script>
+</body>
+</html>

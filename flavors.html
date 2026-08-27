@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavors | Critter Creamery</title>
+  <meta name="description" content="More than fifty bug ice cream flavors across Favorites, Seasonal, Exotic, and The Deep Crawl.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127846;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="bg-cream font-body text-choc">
+
+  <header class="sticky top-0 z-50 bg-berry shadow-lg">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-display text-2xl font-bold text-white">&#127846; Critter Creamery</a>
+      <button id="menu-button" class="text-3xl text-white md:hidden" aria-label="Toggle menu">&#9776;</button>
+      <ul class="hidden gap-6 font-bold text-white md:flex">
+        <li><a class="hover:text-sunny" href="index.html">Home</a></li>
+        <li><a class="underline decoration-sunny decoration-4 underline-offset-4" href="flavors.html">Flavors</a></li>
+        <li><a class="hover:text-sunny" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </nav>
+    <ul id="mobile-menu" class="hidden flex-col gap-2 bg-berry px-6 pb-4 font-bold text-white md:hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flavors.html">Flavors</a></li>
+      <li><a href="sundae-builder.html">Sundae builder</a></li>
+      <li><a href="our-bugs.html">Our bugs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </header>
+
+  <section class="bg-mint/20 px-4 py-12 text-center">
+    <h1 class="font-display text-5xl font-bold text-berry">Our flavors</h1>
+    <p class="mx-auto mt-3 max-w-xl text-lg font-semibold">
+      Fifty-plus flavors, every one packed with bugs. Samples are free.
+      So is changing your mind, though nobody ever does.
+    </p>
+    <nav id="category-links" class="mt-6 flex flex-wrap justify-center gap-3"></nav>
+  </section>
+
+  <main id="flavor-sections" class="mx-auto max-w-6xl px-4 py-12"></main>
+
+  <footer class="bg-choc px-4 py-10 text-cream">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
+      <p class="font-display text-2xl font-bold">&#127846; Critter Creamery</p>
+      <p class="font-semibold">88 Thorax Lane, Mothville, Oregon &middot; Open daily, 11am to 9pm</p>
+      <ul class="flex flex-wrap justify-center gap-4 text-sm font-bold">
+        <li><a class="hover:text-sunny" href="flavors.html">Flavors</a></li>
+        <li><a class="hover:text-sunny" href="sundae-builder.html">Sundae builder</a></li>
+        <li><a class="hover:text-sunny" href="our-bugs.html">Our bugs</a></li>
+        <li><a class="hover:text-sunny" href="about.html">About</a></li>
+        <li><a class="hover:text-sunny" href="testimonials.html">Testimonials</a></li>
+      </ul>
+      <p class="text-xs text-cream/70">Critter Creamery is a parody. No actual bugs were churned.</p>
+    </div>
+  </footer>
+
+  <script src="js/flavors.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Render category jump links and one section per category.
+    const links = document.getElementById("category-links");
+    const container = document.getElementById("flavor-sections");
+
+    FLAVOR_CATEGORIES.forEach((cat) => {
+      const link = document.createElement("a");
+      link.href = "#" + cat.id;
+      link.textContent = cat.name;
+      link.className = "rounded-full bg-berry px-4 py-2 font-display font-semibold text-white shadow hover:bg-berry/90";
+      links.appendChild(link);
+
+      const section = document.createElement("section");
+      section.id = cat.id;
+      section.className = "mb-16 scroll-mt-24";
+      section.innerHTML = `
+        <figure class="relative overflow-hidden rounded-3xl shadow-xl">
+          <img src="${cat.image}" alt="${cat.name} bug ice cream" class="h-56 w-full object-cover md:h-72">
+          <figcaption class="absolute bottom-2 right-2 z-10 rounded-full bg-white/80 px-3 py-1 font-display text-sm font-semibold text-choc">Critter Creamery</figcaption>
+          <div class="absolute inset-0 flex items-end bg-gradient-to-t from-choc/70 to-transparent p-6">
+            <h2 class="font-display text-4xl font-bold text-white">${cat.name}</h2>
+          </div>
+        </figure>
+        <p class="mt-4 text-lg font-semibold">${cat.blurb}</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+      `;
+      const grid = section.querySelector("div.grid");
+      cat.flavors.forEach((flavor) => {
+        const card = document.createElement("div");
+        card.className = "rounded-2xl bg-white p-5 shadow";
+        card.innerHTML = `
+          <h3 class="font-display text-lg font-semibold text-berry"></h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wide text-buggy"></p>
+          <p class="mt-2 text-sm"></p>
+        `;
+        card.children[0].textContent = flavor.name;
+        card.children[1].textContent = "Bugs: " + flavor.bugs;
+        card.children[2].textContent = flavor.desc;
+        grid.appendChild(card);
+      });
+      container.appendChild(section);
+    });
+  </script>
+</body>
+</html>
